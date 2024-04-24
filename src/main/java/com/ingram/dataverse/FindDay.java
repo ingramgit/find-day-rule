@@ -6,12 +6,33 @@ package com.ingram.dataverse;
 
 public class FindDay implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public FindDay() {
-    }
+	private java.lang.String date;
+	private java.lang.String day;
 
+	public FindDay() {
+	}
 
+	public java.lang.String getDate() {
+		return this.date;
+	}
 
+	public void setDate(java.lang.String date) {
+		this.date = date;
+	}
+
+	public java.lang.String getDay() {
+		return this.day;
+	}
+
+	public void setDay(java.lang.String day) {
+		this.day = day;
+	}
+
+	public FindDay(java.lang.String date, java.lang.String day) {
+		this.date = date;
+		this.day = day;
+	}
 
 }
