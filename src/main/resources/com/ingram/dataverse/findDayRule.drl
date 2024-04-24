@@ -1,10 +1,11 @@
 package com.ingram.dataverse;
 
 import com.ingram.dataverse.FindDay;
+import com.ingram.dataverse.Utility;
 
 rule "Find day by date"
 	when 
 		f: FindDay()
 	then
-		
+		f.setDay(Utility.getDayByDate(f.getDayByDate()));
 	end
