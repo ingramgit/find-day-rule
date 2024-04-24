@@ -7,5 +7,5 @@ rule "Find day by date"
 	when 
 		f: FindDay()
 	then
-		f.setDay(Utility.getDayByDate(f.getDayByDate()));
+		f.setDay(Utility.getDayByDate(f.getDate()));
 	end
