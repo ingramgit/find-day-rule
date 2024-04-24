@@ -12,6 +12,16 @@ public class Utility implements java.io.Serializable {
     }
 
 
-
+    public static String getDayByDate(String date) {
+		SimpleDateFormat format1 = new SimpleDateFormat("dd-MM-yyyy");
+  	    Date dt1;
+		try {
+			dt1 = format1.parse(date);
+			DateFormat format2 = new SimpleDateFormat("EEEE"); 
+	  	    return format2.format(dt1);
+		} catch (ParseException e) {
+			return "INVALID_DATE";
+		}
+	}
 
 }
