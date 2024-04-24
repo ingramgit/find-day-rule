@@ -2,14 +2,9 @@ package com.ingram.dataverse;
 
 import com.ingram.dataverse.FindDay;
 
-rule "Data duplicate"
+rule "Find day by date"
 	when 
-		data: Data(name != null 
-		           && type != null
-		           && (name.equalsIgnoreCase("time_window") 
-		           && type.equalsIgnoreCase("duplicate"))
-		           || (name.equalsIgnoreCase("global") 
-		           && type.equalsIgnoreCase("duplicate")))
+		f: FindDay()
 	then
-		data.setResponse("throw_exception");
+		
 	end
