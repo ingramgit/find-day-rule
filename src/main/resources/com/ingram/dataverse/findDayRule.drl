@@ -1,2 +1,15 @@
 package com.ingram.dataverse;
 
+import com.ingram.dataverse.FindDay;
+
+rule "Data duplicate"
+	when 
+		data: Data(name != null 
+		           && type != null
+		           && (name.equalsIgnoreCase("time_window") 
+		           && type.equalsIgnoreCase("duplicate"))
+		           || (name.equalsIgnoreCase("global") 
+		           && type.equalsIgnoreCase("duplicate")))
+	then
+		data.setResponse("throw_exception");
+	end
